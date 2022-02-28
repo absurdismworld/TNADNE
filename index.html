@@ -94,6 +94,7 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
+    document.getElementById("neco-arc").src = 'images/' + getRandomInt(1, 488) + '.png'
     document.getElementById("neco-more").onclick = function(){
         document.getElementById("neco-arc").src = 'images/' + getRandomInt(1, 488) + '.png'
     }
