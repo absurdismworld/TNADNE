@@ -1,28 +1,100 @@
-<html>
+<!DOCTYPE html>
 <head>
-    <title>This NecoArc Does Not Exist</title>
-	    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-
+    <title>This Neco-Arc Does Not Exist</title>
+    <meta name="description" content="Procedurally generated Neco-Arcs">
 </head>
 <body>
-    <script type="text/javascript">
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; // The maximum is exclusive and the minimum is inclusive
-}
-
-document.write('<img src="images/' + getRandomInt(1, 488) + '.png">')
-</script>
-
-		<div class="credits">
-        	Refresh the page for a new random image, or <a href="">click here</a>. Current image count:~400
-        	<div class="oldsite">
-		Have questions? <a href="./faq/index.html">Click here for FAQ and Terms of Use</a>.
-		<div class="oldsite0">
-		Thanks to the <a href="https://twitter.com/ai_curio">creator</a> of the Looking glass AI, Google for providing Colab, <a href="https://soundcloud.com/mabby502">MAB#4186</a> for general help with web stuff and everyone else in my <a href="https://absurdismworld.github.io/discord">discord server</a> for being awesome.
-		<div class="homepage">
-		Wanna go back to the homepage? <a href="https://absurdismworld.cc">Click here</a>
+    <div class="container">
+        <h1 id="neco-title">This Neco-Arc Does Not Exist.</h1>
+        <img id="neco-arc">
+        <button id="neco-more">MORE!</button>
+        <div id="credits">
+			Click more to generate!<br>
+            Have questions? <a href="./faq/index.html">Click here for FAQ and Terms of Use</a>.<br>
+            Thanks to the <a href="https://twitter.com/ai_curio">creator</a> of the Looking glass AI, Google for providing Colab, <a href="https://soundcloud.com/mabby502">MAB#4186</a> for general help with web stuff and everyone else in my <a href="https://absurdismworld.github.io/discord">discord server</a> for being awesome.<br><br>
+            Wanna go back to the homepage? <a href="https://absurdismworld.cc">Click here</a>
+        </div>
     </div>
 </body>
-</html>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+    }
+    body * {
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    font-family: Courier Prime;
+	    font-size: 24px;
+	    box-sizing: border-box;
+    }
+    #neco-title {
+        display: block;
+        margin: auto;
+        padding: 0 0 .7rem;
+        text-align: center;
+        font-size: 1rem;
+        font-family: monospace;
+    }
+    .container {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        padding: 1rem;
+    }
+    #neco-arc {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        display: block;
+        margin: auto;
+        outline: solid .1rem rgb(30,30,30);
+        outline-offset: -.1rem;
+        box-shadow: .2rem .2rem .2rem rgba(0,0,0,0.4);
+    }
+    #neco-more {
+        display: block;
+        margin: auto;
+        text-align: center;
+        margin: .8rem auto;
+        border: solid .04rem rgb(120,120,120);
+        background: rgb(250,250,250);
+        box-shadow: .2rem .2rem .2rem rgba(0,0,0,0.4);
+        cursor: pointer;
+        font-family: monospace;
+    }
+    #neco-more:hover {
+        box-shadow: .2rem .2rem .2rem rgba(0,0,0,0.7);
+    }
+    #neco-more:active {
+        box-shadow: .2rem .2rem .2rem rgba(0,0,0,0.9);
+        background: rgb(245,245,245);
+    }
+    #credits {
+        display: block;
+        margin: 2rem auto;
+        border: solid .04rem rgb(30,30,30);
+        font-family: Arial, Helvetica, sans-serif;
+        padding: .2rem;
+        width: 70vw;
+        font-size: .7rem;
+    }
+    #credits a {
+        font-size: .7rem;
+        font-family: inherit;
+    }
+</style>
+
+<script>
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+    document.getElementById("neco-more").onclick = function(){
+        document.getElementById("neco-arc").src = 'images/' + getRandomInt(1, 488) + '.png'
+    }
+</script>
